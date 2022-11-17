@@ -1,0 +1,13 @@
+.env
+pyvenv.cfg
+__pycache__
+*.csv
+venv
+portfolio_config.py
+*.xlsx
+operations.py
+export_logic.py
+config_aux.py
+test.py
+logs.log
+data.json
