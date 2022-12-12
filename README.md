@@ -1,7 +1,7 @@
-# investiments Report
+# Investments Report
 
 ## Who is it
-This project is intended to help beginners managing their investiments:
+This project is intended to help beginners managing their investments:
 - Store transaction (buy/sell stocks),
 - Historical of yields
 - Get a summary and statistics of the portfolio
