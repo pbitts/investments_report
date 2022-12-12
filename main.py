@@ -115,7 +115,7 @@ def run_operations(operation_type: str = None, product_type: str =None):
 
         if product_type == 'stocks':
             add_stock()
-        elif product_type == 'yield':
+        elif product_type == 'yields':
             add_yield()
         else:
             raise ValueError(f'Product type "{product_type}" not available!')

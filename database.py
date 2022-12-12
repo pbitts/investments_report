@@ -92,16 +92,17 @@ class Database:
         :broker : Stocks sold matching this broker field
         :return : list of dict containing the result of this query'''
         logger = logging.getLogger(Database.genreport_sold_stocks.__qualname__)
+        if from_date:
+            from_date = datetime.strptime(from_date, "%Y-%m-%d")
+        if to_date:
+            to_date = datetime.strptime(to_date, "%Y-%m-%d")
         if not from_date:
             this_year = str(datetime.now().year)
             from_date = datetime.strptime(str(this_year)+'-01-1', '%Y-%m-%d')
         if not to_date:
             to_date = datetime.now().strftime("%Y-%m-%#d")
             to_date = datetime.strptime(to_date,'%Y-%m-%d') 
-        if from_date:
-            from_date = datetime.strptime(from_date, "%Y-%m-%d")
-        if to_date:
-            to_date = datetime.strptime(to_date, "%Y-%m-%d")
+
         logger.info(f'From date: {from_date} | To date: {to_date}')
         results = list(self.stocks.find ({'$and' : [{'date': {'$gt': from_date, '$lt': to_date }}, {"broker": {'$eq': broker}},  {"transaction_type": {'$eq': 'Sell'}} ]}))
         return results
