@@ -3,7 +3,7 @@ from dotenv import load_dotenv, find_dotenv
 
 import os
 from urllib.parse import quote_plus 
-from datetime import datetime, timedelta
+from datetime import datetime 
 import logging
 
 

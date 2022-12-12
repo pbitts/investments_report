@@ -10,7 +10,7 @@ import pytz
 from create_table import Table
 from database import Database
 from statistics import Statistics
-from export_logic import Export
+
 
 def run_operations(operation_type: str = None, product_type: str =None):
     '''Defines and call functions do realize desired operation
