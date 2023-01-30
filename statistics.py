@@ -102,7 +102,7 @@ class Statistics:
         for row in self.data:
             if row['stock'] in selected_stocks:
                 #Calculates total summary
-                market_price = Ticker(row['stock']+'.SA').info['regularMarketPrice']
+                market_price = Ticker(row['stock']+'.SA').fast_info['last_price']
                 if not market_price:
                     market_price = 0.0
                 total_invested = total_invested + row['total']   
@@ -118,7 +118,7 @@ class Statistics:
                 if row['quantity'] == 0:
                     pass
                 else:    
-                    market_price = Ticker(row["stock"]+".SA").info["regularMarketPrice"] 
+                    market_price = Ticker(row["stock"]+".SA").fast_info['last_price']
                     if not market_price:
                         market_price = 0.0                                    
                     current_stock_value = market_price
